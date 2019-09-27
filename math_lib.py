@@ -32,4 +32,19 @@ def list_mean(L):
     return mean
 
 def list_stdev(L):
+    """
+    Function to compute the standard deviation of a list
+    
+    Arguments
+    ---------
+    L : list of floats/ints
+        List to compute the mean of
+    
+    Returns
+    -------
+    stdev : float
+        The standard deviation of the list
+    """
+    if L is None:
+        raise TypeError("list_stdev: No input passed to function")
     return None
