@@ -14,3 +14,5 @@ class TestBoxplot(unittest.TestCase):
     def test_boxplot_filename_type(self):
         self.assertRaises(TypeError, dv.boxplot,[1,2,3],123)
         self.assertRaises(TypeError, dv.boxplot,[1,2,3],['text','text','text'])
+    def test_boxplot_output_file_type(self):
+        self.assertRaises(ValueError,dv.boxplot,[1,2,3],'output.txt')
