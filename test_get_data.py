@@ -16,9 +16,8 @@ class TestGetData(unittest.TestCase):
     def test_read_stdin_col_outofrange(self):
         # test to see if an Error is raised if a column number greater than
         # the number of columns is passed
-        for line in sys.stdin.readlines():
-            line=line.strip()
-        length=len(line)
+        stdin = sys.stdin.readlines()
+        length=len(stdin[0].rstrip().split(' '))
         #ength = len(lines.rstrip().split(' '))
         self.assertRaises(IndexError,gd.read_stdin_col,length+1)
         

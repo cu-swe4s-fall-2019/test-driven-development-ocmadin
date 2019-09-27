@@ -1,3 +1,5 @@
+import sys
+
 
 def read_stdin_col(col_num):
     """
@@ -20,4 +22,8 @@ def read_stdin_col(col_num):
     
     if not isinstance(col_num,int):
         raise TypeError('read_stdin_col: Column number must be an integer')
+        
+    stdin = sys.stdin.readlines()
+    if len(stdin[0].rstrip().split(' ')) < col_num:
+        raise IndexError('read_stdin_col: Column number is out of range')
     return None
