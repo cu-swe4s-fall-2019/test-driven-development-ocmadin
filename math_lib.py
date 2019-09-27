@@ -15,6 +15,9 @@ def list_mean(L):
     """
     if L is None:
         raise TypeError("list_mean: No input passed to function")
+        
+    if not isinstance(L,list):
+        raise TypeError("list_mean: Wrong input type")
     
     return None
 
