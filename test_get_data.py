@@ -1,5 +1,6 @@
 import unittest
 import get_data as gd
+import sys
 
 class TestGetData(unittest.TestCase):
     def test_read_stdin_col_no_input(self):
@@ -10,4 +11,14 @@ class TestGetData(unittest.TestCase):
         self.assertRaises(TypeError,gd.read_stdin_col,'text')
         self.assertRaises(TypeError,gd.read_stdin_col,1.23)
         self.assertRaises(TypeError,gd.read_stdin_col,[1,2,3])
-        self.assertRaises(TypeError,gd.read_stdin_col,{})        
+        self.assertRaises(TypeError,gd.read_stdin_col,{})
+        
+    def test_read_stdin_col_outofrange(self):
+        # test to see if an Error is raised if a column number greater than
+        # the number of columns is passed
+        for line in sys.stdin.readlines():
+            line=line.strip()
+        length=len(line)
+        #ength = len(lines.rstrip().split(' '))
+        self.assertRaises(IndexError,gd.read_stdin_col,length+1)
+        
