@@ -68,6 +68,16 @@ class TestListStdev(unittest.TestCase):
         # test a basic integer stdev
         input_list=[1,2,3]        
         self.assertEqual(ml.list_stdev(input_list),statistics.pstdev(input_list))
+        
+    def test_list_stdev_random(self):
+        # test a list of random numbers of random length
+        for i in range(100):
+            input_list_length = random.randint(1,1000)
+            input_list = []
+            for i in range(input_list_length):
+                element = random.random()
+                input_list.append(element)
+            self.assertAlmostEqual(ml.list_stdev(input_list),statistics.pstdev(input_list),places=1)
     
     
         
