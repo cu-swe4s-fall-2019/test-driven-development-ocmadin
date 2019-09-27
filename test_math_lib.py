@@ -14,3 +14,7 @@ class TestListMean(unittest.TestCase):
         self.assertRaises(TypeError, ml.list_mean,{})
         self.assertRaises(TypeError, ml.list_mean,True)
         self.assertRaises(TypeError, ml.list_mean,'Text')
+        
+    def test_list_mean_empty(self):
+        # test if the list is empty
+        self.assertRaises(IndexError,ml.list_mean,[])
