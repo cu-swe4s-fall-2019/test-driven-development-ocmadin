@@ -18,6 +18,9 @@ def list_mean(L):
         
     if not isinstance(L,list):
         raise TypeError("list_mean: Wrong input type")
+
+    if len(L) == 0:
+        raise IndexError("list_mean: List is empty")
     
     return None
 
