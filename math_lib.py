@@ -47,4 +47,7 @@ def list_stdev(L):
     """
     if L is None:
         raise TypeError("list_stdev: No input passed to function")
+        
+    if not isinstance(L,list):
+        raise TypeError("list_stdev: Wrong input type")
     return None
