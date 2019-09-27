@@ -1,7 +1,7 @@
 import unittest
 import math_lib as ml
 import random
-
+import statistics
 
 class TestListMean(unittest.TestCase):
     def test_list_mean_no_input(self):
@@ -59,9 +59,15 @@ class TestListStdev(unittest.TestCase):
         # test if the list is empty
         self.assertRaises(IndexError,ml.list_stdev,[])
         
-    def test_list_mean_invalid_types(self):
+    def test_list_stdev_invalid_types(self):
         # test if there are invalid types in the list
         self.assertRaises(TypeError, ml.list_stdev,['text','text'])
         self.assertRaises(TypeError, ml.list_stdev,[[1,2],[1,2]])
+        
+    def test_list_mean_basic(self):
+        # test a basic integer stdev
+        input_list=[1,2,3]        
+        self.assertEqual(ml.list_stdev(input_list),statistics.stdev(input_list))
+    
     
         
