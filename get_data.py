@@ -23,7 +23,15 @@ def read_stdin_col(col_num):
     if not isinstance(col_num,int):
         raise TypeError('read_stdin_col: Column number must be an integer')
         
-    stdin = sys.stdin.readlines()
-    if len(stdin[0].rstrip().split(' ')) < col_num:
+    array = sys.stdin.readlines()
+    if len(array[0].rstrip().split(' ')) < col_num:
         raise IndexError('read_stdin_col: Column number is out of range')
-    return None
+    
+    
+    column = []
+    for line in array:
+        column.append(int(line.rstrip().split(' ')[col_num]))
+    
+    return column
+
+    
