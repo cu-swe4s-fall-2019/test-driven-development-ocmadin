@@ -41,3 +41,9 @@ class TestListMean(unittest.TestCase):
                 input_list.append(element)
                 list_sum += element
             self.assertEqual(ml.list_mean(input_list),list_sum/input_list_length)
+            
+class TestListStdev(unittest.TestCase):
+    def test_list_stdev_no_input(self):
+         # test if no input is passed to the function
+        self.assertRaises(TypeError, ml.list_stdev, None)
+        
