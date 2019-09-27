@@ -1,3 +1,4 @@
+import math
 
 def list_mean(L):
     """
@@ -58,5 +59,9 @@ def list_stdev(L):
     
     if not any(valid_types):
         raise TypeError("list_stdev: Invalid types in list")
+    
+    mean = list_mean(L)
+
+    stdev = math.sqrt(sum([(mean-x)**2 for x in L]) / len(L))
         
-    return None
+    return stdev
