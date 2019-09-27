@@ -23,3 +23,8 @@ class TestListMean(unittest.TestCase):
         # test if there are invalid types in the list
         self.assertRaises(TypeError, ml.list_mean,['text','text'])
         self.assertRaises(TypeError, ml.list_mean,[[1,2],[1,2]])
+        
+    def test_list_mean_basic(self):
+        # test a basic integer mean
+        input_list=[1,2,3]
+        self.assertEqual(ml.list_mean(input_list),2)
