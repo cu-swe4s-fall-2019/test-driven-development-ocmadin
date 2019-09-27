@@ -17,4 +17,7 @@ def read_stdin_col(col_num):
     
     if col_num is None:
         raise TypeError('read_stdin_col: No column number supplied to function')
+    
+    if not isinstance(col_num,int):
+        raise TypeError('read_stdin_col: Column number must be an integer')
     return None
