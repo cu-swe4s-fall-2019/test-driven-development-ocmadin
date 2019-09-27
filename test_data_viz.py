@@ -8,3 +8,6 @@ class TestBoxplot(unittest.TestCase):
         self.assertRaises(TypeError,dv.boxplot,1)
         self.assertRaises(TypeError,dv.boxplot,1.5)
         self.assertRaises(TypeError,dv.boxplot,'text')
+    def test_boxplot_bad_input_in_list(self):
+        self.assertRaises(TypeError, dv.boxplot,['text','text'])
+        self.assertRaises(TypeError, dv.boxplot,[[1,2],[1,2]])
