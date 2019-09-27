@@ -1,5 +1,6 @@
 import unittest
 import math_lib as ml
+import random
 
 
 class TestListMean(unittest.TestCase):
@@ -28,3 +29,15 @@ class TestListMean(unittest.TestCase):
         # test a basic integer mean
         input_list=[1,2,3]
         self.assertEqual(ml.list_mean(input_list),2)
+
+    def test_list_mean_random(self):
+        # test a list of random numbers of random length
+        for i in range(100):
+            input_list_length = random.randint(1,1000)
+            input_list = []
+            list_sum = 0
+            for i in range(input_list_length):
+                element = random.random()
+                input_list.append(element)
+                list_sum += element
+            self.assertEqual(ml.list_mean(input_list),list_sum/input_list_length)
