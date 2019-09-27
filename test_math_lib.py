@@ -47,3 +47,11 @@ class TestListStdev(unittest.TestCase):
          # test if no input is passed to the function
         self.assertRaises(TypeError, ml.list_stdev, None)
         
+    def test_list_stdev_type(self):
+        # test if the input is the wrong type
+        self.assertRaises(TypeError, ml.list_stdev, 1)
+        self.assertRaises(TypeError, ml.list_stdev,1.05)
+        self.assertRaises(TypeError, ml.list_stdev,{})
+        self.assertRaises(TypeError, ml.list_stdev,True)
+        self.assertRaises(TypeError, ml.list_stdev,'Text')
+        
