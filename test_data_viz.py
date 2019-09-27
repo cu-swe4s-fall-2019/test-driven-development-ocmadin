@@ -16,3 +16,7 @@ class TestBoxplot(unittest.TestCase):
         self.assertRaises(TypeError, dv.boxplot,[1,2,3],['text','text','text'])
     def test_boxplot_output_file_type(self):
         self.assertRaises(ValueError,dv.boxplot,[1,2,3],'output.txt')
+        
+class TetHistogram(unittest.TestCase):
+    def test_histogram_empty_input(self):
+        self.assertRaises(TypeError, dv.histogram,None)
