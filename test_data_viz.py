@@ -11,3 +11,6 @@ class TestBoxplot(unittest.TestCase):
     def test_boxplot_bad_input_in_list(self):
         self.assertRaises(TypeError, dv.boxplot,['text','text'])
         self.assertRaises(TypeError, dv.boxplot,[[1,2],[1,2]])
+    def test_boxplot_filename_type(self):
+        self.assertRaises(TypeError, dv.boxplot,[1,2,3],123)
+        self.assertRaises(TypeError, dv.boxplot,[1,2,3],['text','text','text'])
