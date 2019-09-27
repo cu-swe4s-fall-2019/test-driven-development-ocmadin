@@ -59,3 +59,9 @@ class TestListStdev(unittest.TestCase):
         # test if the list is empty
         self.assertRaises(IndexError,ml.list_stdev,[])
         
+    def test_list_mean_invalid_types(self):
+        # test if there are invalid types in the list
+        self.assertRaises(TypeError, ml.list_stdev,['text','text'])
+        self.assertRaises(TypeError, ml.list_stdev,[[1,2],[1,2]])
+    
+        
