@@ -27,7 +27,9 @@ def list_mean(L):
     if not any(valid_types):
         raise TypeError("list_mean: Invalid types in list")
     
-    return None
+    mean=sum(L)/len(L)
+    
+    return mean
 
 def list_stdev(L):
     return None
