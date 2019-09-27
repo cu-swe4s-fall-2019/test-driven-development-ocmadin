@@ -55,3 +55,7 @@ class TestListStdev(unittest.TestCase):
         self.assertRaises(TypeError, ml.list_stdev,True)
         self.assertRaises(TypeError, ml.list_stdev,'Text')
         
+    def test_list_stdev_empty(self):
+        # test if the list is empty
+        self.assertRaises(IndexError,ml.list_stdev,[])
+        
