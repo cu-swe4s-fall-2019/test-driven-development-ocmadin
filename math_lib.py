@@ -53,5 +53,10 @@ def list_stdev(L):
         
     if len(L) == 0:
         raise IndexError("list_stdev: List is empty")
+
+    valid_types = [isinstance(value,(int,float,complex)) for value in L]
+    
+    if not any(valid_types):
+        raise TypeError("list_stdev: Invalid types in list")
         
     return None
